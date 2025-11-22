@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills • Kapil Basu</title>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="icon" href="images/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Styles (global first, then page-specific) -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/skills.css">
+
+  <!-- your main script (keeps it defer-like by placing before closing body in your setup) -->
+</head>
+
+<body>
+
+ <!-- ===================== HEADER (loaded dynamically) ===================== -->
+ <div id="header"></div>
+ <script src="js/loadHeader.js"></script>
+  
+
+  <!-- ===================== PAGE TRANSITION ===================== -->
+  <div class="page-transition">
+
+    <!-- ===================== MAIN CONTENT ===================== -->
+    <main class="container">
+
+      <h1 class="page-title reveal">Skills</h1>
+      <p class="page-intro reveal">A complete overview of my technical, engineering, professional, and HR skill set.</p>
+
+      <!-- ===================== TOP EXPERTISE RINGS ===================== -->
+      <section class="highlight-skills reveal" aria-labelledby="top-expertise">
+        <h2 id="top-expertise">Core Expertise</h2>
+
+        <div class="ring-wrapper">
+
+          <div class="ring-card reveal">
+            <!-- note: JS reads data-progress; CSS/JS will place the number inside .percent -->
+            <div class="ring" data-progress="90">
+              <span class="percent" aria-hidden="true">90%</span>
+            </div>
+            <h3><i class="ri-cpu-fill"></i> Embedded Systems</h3>
+            <p>Microcontrollers, circuit design, prototyping & hardware interfacing.</p>
+          </div>
+
+          <div class="ring-card reveal">
+            <div class="ring" data-progress="85">
+              <span class="percent" aria-hidden="true">85%</span>
+            </div>
+            <h3><i class="ri-group-fill"></i> HR Recruitment</h3>
+            <p>Full hiring cycle, client communication, onboarding & documentation.</p>
+          </div>
+
+          <div class="ring-card reveal">
+            <div class="ring" data-progress="80">
+              <span class="percent" aria-hidden="true">80%</span>
+            </div>
+            <h3><i class="ri-code-box-fill"></i> Web Development</h3>
+            <p>HTML, CSS, JavaScript, responsive UI and best coding practices.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== TECHNICAL SKILL BARS ===================== -->
+      <section class="skills-section reveal" aria-labelledby="technical-skills">
+        <h2 id="technical-skills"><i class="ri-code-s-slash-line"></i> Technical Skills</h2>
+
+        <div class="skill-bars">
+
+          <div class="bar-item">
+            <span><i class="ri-terminal-box-line"></i> Programming (C, C++, Python, JavaScript)</span>
+            <div class="bar"><div class="bar-fill" data-percent="85"></div></div>
+          </div>
+
+          <div class="bar-item">
+            <span><i class="ri-cpu-line"></i> Embedded Systems & Microcontrollers</span>
+            <div class="bar"><div class="bar-fill" data-percent="90"></div></div>
+          </div>
+
+          <div class="bar-item">
+            <span><i class="ri-wifi-line"></i> IoT & Sensor Interfacing</span>
+            <div class="bar"><div class="bar-fill" data-percent="80"></div></div>
+          </div>
+
+          <div class="bar-item">
+            <span><i class="ri-tools-line"></i> PCB Design & Circuit Debugging</span>
+            <div class="bar"><div class="bar-fill" data-percent="75"></div></div>
+          </div>
+
+          <div class="bar-item">
+            <span><i class="ri-calculator-line"></i> MATLAB / Proteus / Multisim Simulation</span>
+            <div class="bar"><div class="bar-fill" data-percent="70"></div></div>
+          </div>
+
+          <div class="bar-item">
+            <span><i class="ri-database-2-line"></i> SQL & Structured Data Handling</span>
+            <div class="bar"><div class="bar-fill" data-percent="60"></div></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== PROFESSIONAL SKILLS ===================== -->
+      <section class="skills-section reveal" aria-labelledby="professional-skills">
+        <h2 id="professional-skills"><i class="ri-briefcase-4-line"></i> Professional & HR Skills</h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-card reveal">
+            <h3><i class="ri-user-search-line"></i> Recruitment</h3>
+            <ul>
+              <li>End-to-End Hiring</li>
+              <li>Candidate Screening</li>
+              <li>Interview Evaluation</li>
+              <li>Onboarding & Documentation</li>
+              <li>Client Coordination</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3><i class="ri-chat-4-line"></i> Communication</h3>
+            <ul>
+              <li>Professional Email Writing</li>
+              <li>Client Handling</li>
+              <li>Team Collaboration</li>
+              <li>Candidate Interaction</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal">
+            <h3><i class="ri-lightbulb-flash-line"></i> Soft Skills</h3>
+            <ul>
+              <li>Leadership</li>
+              <li>Time Management</li>
+              <li>Critical Thinking</li>
+              <li>Problem Solving</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div> <!-- end page-transition -->
+
+   <!-- ===================== FOOTER (loaded dynamically) ===================== -->
+   <div id="footer"></div>
+   <script src="js/loadFooter.js"></script>
+   
+  <!-- Scroll To Top -->
+  <button id="toTopBtn" aria-label="Scroll to top">↑</button>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/918348907841" id="whatsappBtn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp Logo" loading="lazy">
+  </a>
+
+  <!-- main.js (keeps existing file) -->
+  <script defer src="js/main.js"></script>
+</body>
+</html>

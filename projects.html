@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects • Kapil Basu</title>
+
+  <meta name="description" content="Projects by Kapil Basu — IoT, AI, Automation and Web development." />
+  <meta name="author" content="Kapil Basu" />
+
+  <!-- Icons & Fonts (same as about.html) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/projects.css">
+
+  <script defer src="js/main.js"></script>
+</head>
+
+<body>
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true"><div class="spinner" aria-hidden="true"></div></div>
+
+   <!-- ===================== HEADER (loaded dynamically) ===================== -->
+  <div id="header"></div>
+  <script src="js/loadHeader.js"></script>
+  
+
+  <!-- PAGE TRANSITION WRAPPER -->
+  <div class="page-transition">
+
+    <!-- HERO / TITLE (matches about's hero area) -->
+    <main id="mainContent" role="main">
+
+      <section class="projects-hero reveal" aria-labelledby="projects-heading">
+        <div class="container about-card"> <!-- reuse about-card container sizing -->
+          <div class="about-left">
+            <h1 id="projects-heading" class="about-title">Selected Projects</h1>
+            <p class="about-desc">A curated selection of IoT, AI, automation and web projects — click "View details" to learn more.</p>
+            <p class="about-desc">Projects include embedded systems, ML prototypes, automation dashboards and production-ready web apps.</p>
+          </div>
+
+          <aside class="about-right" aria-hidden="true">
+            <!-- small decorative card on the right to match layout -->
+            <div class="photo-glass-card">
+              <img src="images/profile.jpg" alt="Kapil Basu" class="profile-img" loading="lazy">
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- PROJECT LIST (vertical column; image left + text right) -->
+      <section class="projects-list container reveal" aria-label="Projects list">
+
+        <!-- Project 1 -->
+        <article class="project-card reveal" data-project="p1" tabindex="0" role="article" aria-labelledby="p1-title">
+          <div class="project-inner">
+            <div class="project-media">
+              <img src="images/projects/cellphone.webp" alt="Mobile Signal Detector cover" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3 id="p1-title">Mobile Signal Detector</h3>
+              <p class="project-meta"><span class="project-cat">IoT</span> • <time datetime="2019">2019</time></p>
+              <p class="project-desc">A circuit that detects 2G/3G mobile transmission during calls or internet use and alerts the teacher with a warning alarm.</p>
+              <div class="project-actions">
+                <button class="btn small" data-open="p1" aria-haspopup="dialog" aria-controls="projectModal">View details</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal" data-project="p2" tabindex="0" role="article" aria-labelledby="p2-title">
+          <div class="project-inner">
+            <div class="project-media">
+              <img src="images/projects/digits.jpg" alt="Handwritten Digit Recognizer cover" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3 id="p2-title">Handwritten Digit Recognizer</h3>
+              <p class="project-meta"><span class="project-cat">AI / ML</span> • <time datetime="2022">2022</time></p>
+              <p class="project-desc">A Python machine learning model that recognizes handwritten digits and converts them into digital format.</p>
+              <div class="project-actions">
+                <button class="btn small" data-open="p2" aria-haspopup="dialog" aria-controls="projectModal">View details</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal" data-project="p3" tabindex="0" role="article" aria-labelledby="p3-title">
+          <div class="project-inner">
+            <div class="project-media">
+              <img src="images/projects/bluetooth.png" alt="AI Portfolio Automation cover" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3 id="p3-title">Bluetooth Speaker with TPA3110 Amplifier</h3>
+              <p class="project-meta"><span class="project-cat">Bluetooth Device</span> • <time datetime="2025">2025</time></p>
+              <p class="project-desc">A homemade wireless audio system using the TPA3110 amplifier for powerful and clear sound output.</p>
+              <div class="project-actions">
+                <button class="btn small" data-open="p3" aria-haspopup="dialog" aria-controls="projectModal">View details</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card reveal" data-project="p4" tabindex="0" role="article" aria-labelledby="p4-title">
+          <div class="project-inner">
+            <div class="project-media">
+              <img src="images/projects/iot.png" alt="Automated Recruitment Dashboard cover" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3 id="p4-title">Smart Accident Detection System</h3>
+              <p class="project-meta"><span class="project-cat">Automation</span> • <time datetime="2024">2024</time></p>
+              <p class="project-desc">An IoT-based system that detects road accidents and automatically sends SMS alerts with GPS location to emergency contacts.</p>
+              <div class="project-actions">
+                <button class="btn small" data-open="p4" aria-haspopup="dialog" aria-controls="projectModal">View details</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card reveal" data-project="p5" tabindex="0" role="article" aria-labelledby="p5-title">
+          <div class="project-inner">
+            <div class="project-media">
+              <img src="images/projects/cloud.png" alt="Smart Home Energy Monitor cover" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3 id="p5-title">Chatbot + Cloud Computing Internship (AWS/Azure)</h3>
+              <p class="project-meta"><span class="project-cat">IoT</span> • <time datetime="2023">2023</time></p>
+              <p class="project-desc">A chatbot deployed using cloud computing platforms like AWS and Azure to provide scalable and automated responses.</p>
+              <div class="project-actions">
+                <button class="btn small" data-open="p5" aria-haspopup="dialog" aria-controls="projectModal">View details</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+    </main>
+  </div> <!-- end page-transition -->
+
+    <!-- ===================== FOOTER (loaded dynamically) ===================== -->
+  <div id="footer"></div>
+  <script src="js/loadFooter.js"></script>
+  
+  <!-- Scroll To Top -->
+  <button id="toTopBtn" aria-label="Scroll to top">↑</button>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/918348907841" id="whatsappBtn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <img src="images/whatsapp.png" alt="WhatsApp Logo" loading="lazy">
+  </a>
+
+  <!-- PROJECT MODAL -->
+  <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close="true"></div>
+
+    <div class="modal-panel" role="document" aria-describedby="modalDesc">
+      <button class="modal-close" aria-label="Close dialog" data-close="true">✕</button>
+
+      <!-- Centered image on top -->
+      <div class="modal-content">
+        <div class="modal-media" aria-hidden="false">
+          <img src="" alt="" id="modalImage" loading="lazy">
+        </div>
+
+        <div class="modal-body">
+          <h2 id="modalTitle">Project Title</h2>
+          <p class="modal-meta"><span id="modalCategory"></span> • <time id="modalDate"></time></p>
+          <p id="modalDesc">Full project description…</p>
+
+          <div id="modalTags" class="project-tags" aria-label="Project tags"></div>
+
+                
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Small helper CSS for sr-only (copied from about) -->
+  <style>
+    .sr-only {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <!-- PAGE SCRIPT: reveal + modal + accessibility -->
+  <script>
+    (function () {
+      // --- Reveal intersection observer (same pattern as about.html) ---
+      const revealOptions = { root: null, rootMargin: '0px 0px -80px 0px', threshold: 0.08 };
+      const revealObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, revealOptions);
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      // --- Project data (source for modal) ---
+      const PROJECTS = {
+        p1: {
+          title: 'Mobile Signal Detector',
+          cat: 'IoT',
+          date: '2019',
+          img: 'images/projects/cellphone.webp',
+          desc: 'This project uses a high-frequency signal detection circuit to sense 2G/3G mobile activity during calls or internet use. It alerts the teacher with an alarm whenever a mobile phone transmits signals in the classroom, helping prevent unauthorized phone usage.',
+          tags: ['ArduinoIC1 – CA3130 (Op-Amp)','IC2 – NE555 Timer IC','T1 – BC548 NPN Transistor'],
+          demo: '#', // change to real url if available
+          github: '#'
+        },
+        p2: {
+          title: 'Handwritten Digit Recognizer',
+          cat: 'AI / ML',
+          date: '2022',
+          img: 'images/projects/digits.jpg',
+          desc: 'This project uses Python and machine learning (ML) techniques to train a model that can automatically recognize handwritten digits with high accuracy. It demonstrates the practical application of AI in digital handwriting recognition, enabling fast and reliable digit classification for real-world uses like OCR and automation.',
+          tags: ['Python','TensorFlow','Flask'],
+          demo: '#',
+          github: '#'
+        },
+        p3: {
+          title: 'Bluetooth Speaker with TPA3110 Amplifier',
+          cat: 'Bluetooth Device',
+          date: '2025',
+          img: 'images/projects/bluetooth.png',
+          desc: 'This project is a homemade Bluetooth speaker built using the TPA3110 audio amplifier for high-power, clear sound output. It is needed to create an affordable, portable wireless speaker with strong performance using easily available electronic components.',
+          tags: ['Bluetooth Audio Receiver Module','Battery Charging Module (TP4056)','Audio Amplifier Module (Stereo)'],
+          demo: '#',
+          github: '#'
+        },
+        p4: {
+          title: 'Smart Accident Detection System',
+          cat: 'Automation',
+          date: '2024',
+          img: 'images/projects/iot.png',
+          desc: 'This project uses Arduino Nano, MPU-6050, GPS, and GSM modules to automatically detect vehicle accidents and send instant location-based alerts. It is needed to reduce emergency response time and help save lives by providing quick and accurate accident notifications.',
+          tags: ['Arduino Nano (Microcontroller)','MPU-6050 Gyroscope/Accelerometer','GPS Module / GSM Module','Impact Detection Switch'],
+          demo: '#',
+          github: '#'
+        },
+        p5: {
+          title: 'Chatbot + Cloud Computing Internship (AWS/Azure)',
+          cat: 'IoT',
+          date: '2023',
+          img: 'images/projects/cloud.png',
+          desc: 'This project involved building and deploying a cloud-based chatbot using AWS and Azure services, gaining hands-on experience in cloud computing, automation, and scalable architectures. It highlights practical skills in integrating AI with cloud platforms for real-time, efficient application deployment',
+          tags: ['AWS Integration','Azure Integration','Cloud Deployment'],
+          demo: '#',
+          github: '#'
+        }
+      };
+
+      // --- Modal elements ---
+      const modalRoot = document.getElementById('projectModal');
+      const modalBackdrop = modalRoot.querySelector('.modal-backdrop');
+      const modalPanel = modalRoot.querySelector('.modal-panel');
+      const modalImage = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalCategory = document.getElementById('modalCategory');
+      const modalDate = document.getElementById('modalDate');
+      const modalDesc = document.getElementById('modalDesc');
+      const modalTags = document.getElementById('modalTags');
+      
+
+      // Open modal function
+      function openModal(id) {
+        const data = PROJECTS[id];
+        if (!data) return;
+        modalImage.src = data.img;
+        modalImage.alt = data.title;
+        modalTitle.textContent = data.title;
+        modalCategory.textContent = data.cat;
+        modalDate.textContent = data.date;
+        modalDesc.textContent = data.desc;
+        modalTags.innerHTML = '';
+        data.tags.forEach(t => {
+          const s = document.createElement('span');
+          s.className = 'tag';
+          s.textContent = t;
+          modalTags.appendChild(s);
+        });
+              
+
+        // show modal
+        modalRoot.setAttribute('aria-hidden','false');
+        modalRoot.classList.add('open');
+        document.documentElement.style.overflow = 'hidden';
+        // set focus to close button for keyboard users
+        const closeBtn = modalRoot.querySelector('.modal-close');
+        if (closeBtn) closeBtn.focus();
+      }
+
+      // attach open handlers to project buttons
+      document.querySelectorAll('[data-open]').forEach(btn => {
+        btn.addEventListener('click', (ev) => {
+          openModal(btn.getAttribute('data-open'));
+        });
+      });
+
+      // Close handlers
+      modalRoot.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
+      modalBackdrop.addEventListener('click', closeModal);
+
+      function closeModal() {
+        modalRoot.setAttribute('aria-hidden','true');
+        modalRoot.classList.remove('open');
+        document.documentElement.style.overflow = '';
+      }
+
+      // keyboard: esc to close + simple focus trap
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalRoot.classList.contains('open')) closeModal();
+      });
+
+      document.addEventListener('focus', function(event) {
+        if (!modalRoot.classList.contains('open')) return;
+        if (!modalRoot.contains(event.target)) {
+          event.stopPropagation();
+          const closeBtn = modalRoot.querySelector('.modal-close');
+          if (closeBtn) closeBtn.focus();
+        }
+      }, true);
+
+      // attach data-open attributes to existing buttons if not present
+      // (this is defensive in case HTML buttons were copied without data-open)
+      document.querySelectorAll('.project-card').forEach(card => {
+        const id = card.getAttribute('data-project');
+        if (!id) return;
+        const btn = card.querySelector('[data-open]');
+        if (!btn) {
+          const fallback = card.querySelector('.project-actions .btn');
+          if (fallback) fallback.setAttribute('data-open', id);
+        } else {
+          // ensure button has the same value as card data-project
+          btn.setAttribute('data-open', id);
+        }
+      });
+
+      // --- Mobile nav toggle and header scroll behavior (copied from about.html) ---
+      (function () {
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileToggle.addEventListener('click', () => {
+          const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+          mobileToggle.setAttribute('aria-expanded', String(!expanded));
+          if (mainNav.style.display === 'block') {
+            mainNav.style.display = '';
+            mainNav.classList.remove('slide-in');
+          } else {
+            mainNav.style.display = 'block';
+            requestAnimationFrame(() => mainNav.classList.add('slide-in'));
+          }
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 900) {
+            mainNav.style.display = '';
+            mainNav.classList.remove('slide-in');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        const header = document.getElementById('siteHeader');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 12) header.classList.add('scrolled');
+          else header.classList.remove('scrolled');
+        });
+      })();
+
+      // --- small helpers: preloader, toTop, whatsapp behavior (kept minimal) ---
+      (function () {
+        // hide preloader after load
+        window.addEventListener('load', () => {
+          const pre = document.getElementById('preloader');
+          if (pre) pre.style.display = 'none';
+        });
+
+        const toTop = document.getElementById('toTopBtn');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 360) toTop.style.display = 'block';
+          else toTop.style.display = 'none';
+        });
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      })();
+    })();
+  </script>
+
+  
+</body>
+</html>
