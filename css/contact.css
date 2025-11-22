@@ -1,0 +1,214 @@
+/* =============================================================
+   GLOBAL THEME VARIABLES (WORKS WITH data-theme)
+============================================================= */
+
+/* Light Theme */
+html[data-theme="light"] {
+    --accent: #4e7dff;
+    --card-bg: rgba(255, 255, 255, 0.90);
+    --text-light: #222;
+    --text-mid: #555;
+    --border-color: rgba(0,0,0,0.15);
+    --bg: #ffffff;
+  }
+  
+  /* Dark Theme */
+  html[data-theme="dark"] {
+    --accent: #4e7dff;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --text-light: #e8ebf7;
+    --text-mid: #a2a7b8;
+    --border-color: rgba(255,255,255,0.12);
+    --bg: #090d18;
+  }
+  
+  /* Fallback if variables not loaded */
+  :root {
+    --accent: #4e7dff;
+    --card-bg: rgba(255,255,255,0.03);
+    --border-color: rgba(255,255,255,0.1);
+    --text-light: #e8ebf7;
+    --text-mid: #a2a7b8;
+    --shadow-soft: 0 8px 20px rgba(2,6,23,0.45);
+    --shadow-medium: 0 18px 40px rgba(2,6,23,0.6);
+  }
+  
+  /* =============================================================
+     PAGE HEADERS
+  ============================================================= */
+  .page-title {
+    text-align: center;
+    margin-top: 2.2rem;
+    font-size: 2.2rem;
+    color: var(--text-light);
+  }
+  
+  .page-intro {
+    text-align: center;
+    max-width: 760px;
+    margin: .5rem auto 2.5rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+  
+  /* =============================================================
+     CONTACT GRID
+  ============================================================= */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 1.8rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* =============================================================
+     CONTACT CARD
+  ============================================================= */
+  .contact-card {
+    background: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    transition: transform .25s ease, box-shadow .25s ease;
+    color: var(--text-light);
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .contact-card h2 {
+    margin-bottom: .9rem;
+    font-size: 1.2rem;
+    color: var(--text-light);
+  }
+  
+  /* =============================================================
+     INFO LIST
+  ============================================================= */
+  .info-list {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+  }
+  
+  .info-list li {
+    margin-bottom: .6rem;
+    font-size: .95rem;
+    color: var(--text-mid);
+  }
+  
+  .info-list a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  .info-list a:hover {
+    text-decoration: underline;
+  }
+  
+  /* =============================================================
+     SOCIAL LINKS
+  ============================================================= */
+  .social-links {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    margin-top: .8rem;
+  }
+  
+  .social-links a {
+    background: var(--border-color);
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: .9rem;
+    text-decoration: none;
+    transition: background .2s ease;
+  }
+  
+  .social-links a:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  
+  /* =============================================================
+     FORM STYLING
+  ============================================================= */
+  form label {
+    display: block;
+    margin-top: .9rem;
+    margin-bottom: .35rem;
+    font-weight: 600;
+    color: var(--text-light);
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: .8rem .9rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-size: .95rem;
+    outline: none;
+    transition: border .2s ease, box-shadow .2s ease;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(78,125,255,0.25);
+  }
+  
+  /* Submit Button */
+  .btn.full {
+    width: 100%;
+    margin-top: 1.2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+  }
+  
+  /* Form Status */
+  .form-status {
+    margin-top: 12px;
+    min-height: 1.4em;
+    font-weight: 600;
+    font-size: .95rem;
+  }
+  
+  .form-status.success {
+    color: #11b05b;
+  }
+  
+  .form-status.error {
+    color: #ff4e4e;
+  }
+  
+  /* Assistive class */
+  .sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  /* =============================================================
+     RESPONSIVE
+  ============================================================= */
+  @media (max-width: 700px) {
+    .page-title {
+      font-size: 1.7rem;
+    }
+  }
+  

@@ -1,0 +1,179 @@
+html[data-theme="light"] {
+    --accent: #4e7dff;
+    --card-bg: rgba(255,255,255,0.9);
+    --text-light: #222;
+    --text-mid: #555;
+  }
+  
+  html[data-theme="dark"] {
+    --accent: #4e7dff;
+    --card-bg: rgba(255,255,255,0.03);
+    --text-light: #e8ebf7;
+    --text-mid: #a2a7b8;
+  }
+
+/* ============================================================
+SKILLS PAGE — Full styles with safe fallbacks
+============================================================ */
+
+/* safe variable fallbacks (so this file works even before global.css is perfect) */
+:root{
+    --accent: #4e7dff;
+    --card-bg: rgba(255,255,255,0.02);
+    --border-color: rgba(255,255,255,0.08);
+    --shadow-soft: 0 8px 20px rgba(2,6,23,0.45);
+    --shadow-medium: 0 18px 40px rgba(2,6,23,0.6);
+    --text-light: #e8ebf7;
+    --text-mid: #a2a7b8;
+  }
+  
+  /* page headings */
+  .page-title {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text-light);
+  }
+  
+  .page-intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 0.5rem auto 2.5rem;
+    color: var(--text-mid);
+  }
+  
+  /* -------------------------
+     Ring wrapper + card
+     ------------------------- */
+  .ring-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.2rem;
+  }
+  
+  .ring-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.6rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  
+  .ring-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .ring-card h3 {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+    color: var(--text-light);
+  }
+  
+  .ring-card p { color: var(--text-mid); font-size: .95rem; margin-top: .5rem; }
+  
+  /* -------------------------
+     Ring visuals
+     ------------------------- */
+  /* circle container */
+  .ring {
+    --value: 0;
+    --size: 120px;
+  
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+  
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    position: relative;
+  
+    background: conic-gradient(
+        var(--accent) calc(var(--value) * 3.6deg),
+        var(--border-color) 0deg
+    );
+  
+    transition: background 1s ease;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-light);
+  }
+  
+  /* Inner percentage text */
+  .ring .percent {
+    position: absolute;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-light) !important;
+    transition: color 0.4s ease;
+  }
+  
+  /* -------------------------
+     Skill bars
+     ------------------------- */
+  .skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .bar-item span {
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 6px;
+    color: var(--text-light);
+  }
+  
+  .bar {
+    background: var(--border-color);
+    height: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  
+  .bar-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #ffffff));
+    transition: width 1.2s cubic-bezier(.2,.8,.2,1);
+  }
+  
+  /* -------------------------
+     Grid skill cards
+     ------------------------- */
+  .skills-grid {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  .skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  
+  .skill-card h3 {
+    margin-bottom: .6rem;
+    color: var(--text-light);
+  }
+  
+  .skill-card ul { margin:0; padding:0; list-style:none; color:var(--text-mid); }
+  .skill-card li { margin-bottom:.45rem; font-size:.95rem; }
+  
+  /* -------------------------
+     Responsive
+     ------------------------- */
+  @media (max-width: 700px) {
+    .ring { --size: 100px; }
+    .ring-wrapper { gap: 1rem; }
+  }
+  

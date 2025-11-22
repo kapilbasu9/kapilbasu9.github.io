@@ -1,0 +1,638 @@
+/* ========================================================= 
+00 — GLOBAL THEME + VARIABLES (DEFAULT = DARK)
+========================================================= */
+:root {
+  --bg: #0d1117;
+  --bg-light: #161b22;
+  --text: #e6edf3;
+  --text-light: #a7b3c5;
+  --accent: #4ea5ff;
+  --border: #273043;
+  --card-shadow: rgba(0, 0, 0, 0.4);
+
+  --radius: 14px;
+  --transition-speed: 0.25s;
+  --font-heading: 'Poppins', system-ui;
+  --font-body: 'Inter', system-ui;
+}
+
+/* =========================================================
+LIGHT THEME
+========================================================= */
+[data-theme="light"] {
+  --bg: #f8f9ff;
+  --bg-light: #ffffff;
+  --text: #1b1f24;
+  --text-light: #4d5562;
+  --accent: #0056ff;
+  --border: #d4d8e8;
+  --card-shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+01 — RESET
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+body {
+  padding-top: 72px;
+}
+
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+/* =========================================================
+02 — HEADER (UPDATED)
+========================================================= */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  background: rgba(15, 18, 22, 0.45);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: box-shadow .25s ease, background .25s ease;
+}
+
+/* Light-mode fix */
+[data-theme="light"] .site-header {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Shadow only when scrolling */
+body.scrolled .site-header {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 18px;
+}
+
+.brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* ================= NAVIGATION ================== */
+.nav ul {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  position: relative;
+  padding: 6px 8px;
+  font-size: 15px;
+  display: inline-block;
+}
+
+/* Animated underline */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width .25s;
+}
+
+/* Hover underline */
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Active page underline */
+.nav a.active::after {
+  width: 100%;
+}
+
+/* Text color adjustments */
+[data-theme="light"] .nav a {
+  color: #0d1117 !important;
+}
+
+[data-theme="dark"] .nav a {
+  color: #e6edf3;
+}
+
+/* ================= MOBILE ================== */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: var(--text);
+}
+
+@media(max-width: 900px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 180px;
+
+    background: rgba(15,18,22,0.55);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 15px;
+  }
+
+  [data-theme="light"] .nav {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* =========================================================
+03 — BUTTONS
+========================================================= */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  transition: var(--transition-speed);
+}
+
+.btn.small { padding: 8px 14px; }
+.btn:hover { opacity: 0.85; }
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* =========================================================
+03-b — THEME TOGGLE
+========================================================= */
+#themeBtn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  transition: 0.25s;
+}
+
+/* =========================================================
+04 — FOOTER
+========================================================= */
+.site-footer {
+  width: 100%;
+  margin-top: 40px;
+  padding: 22px 0 12px;
+  background: var(--bg-light);
+  border-top: 1px solid var(--border);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-about p {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-light);
+}
+
+.footer-links ul { display: grid; gap: 5px; }
+.footer-links a { font-size: 13px; color: var(--text-light); }
+.footer-links a:hover { color: var(--accent); }
+
+.footer-social .social-icons a {
+  margin-right: 6px;
+  font-size: 18px;
+  color: var(--text-light);
+  transition: color .2s ease, transform .2s ease;
+}
+.footer-social .social-icons a:hover {
+  transform: translateY(-2px);
+  color: var(--accent);
+}
+
+.footer-bottom {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px;
+  text-align: center;
+  color: var(--text-light);
+}
+
+@media(max-width: 880px) {
+  .footer-about,
+  .footer-links,
+  .footer-social {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+05 — SCROLL TO TOP
+========================================================= */
+#toTopBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 10px 14px;
+  background: var(--accent);
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+/* =========================================================
+06 — WHATSAPP BUTTON
+========================================================= */
+#whatsappBtn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 52px;
+  height: 52px;
+}
+
+#whatsappBtn img {
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================
+07 — SCROLL REVEAL ANIMATIONS
+========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+  transition: 0.7s ease-out;
+  will-change: opacity, transform, filter;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Cleaner and smoother stagger animation */
+.reveal:nth-child(n) {
+  transition-delay: calc(0.1s * var(--i, 1));
+}
+
+/* Directional Variants */
+.reveal.fade-left  { transform: translateX(-50px); }
+.reveal.fade-right { transform: translateX(50px);  }
+.reveal.fade-up    { transform: translateY(50px); }
+.reveal.scale      { transform: scale(0.85); }
+
+.reveal.visible.fade-left,
+.reveal.visible.fade-right,
+.reveal.visible.fade-up,
+.reveal.visible.scale {
+  transform: translate(0) scale(1);
+}
+
+/* =========================================================
+08 — STAT COUNTER ANIMATION
+========================================================= */
+.stat-number {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.stat-number.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile – slightly slower animations */
+@media(max-width: 600px) {
+  .reveal {
+    transition-duration: 0.9s;
+  }
+}
+
+/* ===========================
+   HOBBIES – 3D CYLINDER STYLES
+=========================== */
+
+.hobbies-section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cylinder-wrapper {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin: 60px auto;
+  perspective: 1200px;
+}
+
+.cylinder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.cylinder img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Navigation Buttons */
+.cylinder-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 22px;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.cylinder-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.cylinder-btn.prev {
+  left: -60px;
+}
+
+.cylinder-btn.next {
+  right: -60px;
+}
+
+/* =========================================================
+09 — ABOUT PAGE IMAGE POPUP / CAROUSEL
+========================================================= */
+
+/* Image grid (gallery images) */
+.gallery-image {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 12px;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+}
+
+/* Popup Background */
+.image-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease;
+  z-index: 9999;
+}
+
+/* Popup Active State */
+.image-popup.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Popup Image */
+.popup-image {
+  max-width: 88%;
+  max-height: 88%;
+  border-radius: 14px;
+  box-shadow: 0 4px 22px rgba(0,0,0,0.45);
+}
+
+/* Close Button */
+.close-popup {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 34px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.close-popup:hover {
+  transform: scale(1.15);
+  color: var(--accent);
+}
+
+/* =========================================================
+10 — IMAGE CAROUSEL ANIMATION (ABOUT POPUP)
+========================================================= */
+
+/* Carousel Wrapper */
+.image-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Each slide */
+.carousel-slide {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(40px) scale(0.97);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  will-change: opacity, transform;
+}
+
+/* When the slide is active */
+.carousel-slide.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  z-index: 2;
+}
+
+/* Fade-out class */
+.carousel-slide.fade-out {
+  opacity: 0;
+  transform: translateX(-40px) scale(0.97);
+  z-index: 1;
+}
+
+/* Carousel nav buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(255,255,255,0.8);
+  padding: 12px 16px;
+  font-size: 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* Left / Right button positions */
+.carousel-btn.prev {
+  left: 30px;
+}
+.carousel-btn.next {
+  right: 30px;
+}
+
+/* Popup image animation (smooth Zoom-in) */
+.popup-image {
+  animation: popupZoom 0.45s ease;
+}
+
+@keyframes popupZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Smooth transition for popup open */
+.image-popup.active {
+  animation: fadePopup 0.35s ease;
+}
+
+@keyframes fadePopup {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Auto-swiper progress indicator (optional) */
+.carousel-progress {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 120px;
+  background: rgba(255,255,255,0.4);
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.carousel-progress .fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  animation: progressFill 4s linear infinite;
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}

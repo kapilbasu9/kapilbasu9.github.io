@@ -1,0 +1,146 @@
+/* ===============================
+RESUME PAGE STYLES
+=============================== */
+
+/* Page container */
+main.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.2rem;
+    }
+    
+    /* Page Title */
+    .page-title {
+    font-size: 2.4rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: var(--text-light);
+    }
+    
+    .page-intro {
+    color: var(--text-mid);
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    text-align: justify;
+    }
+    
+    /* ===============================
+    SECTION BLOCKS
+    =============================== */
+    .resume-section {
+    margin-bottom: 2.5rem;
+    }
+    
+    .resume-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    }
+    
+    /* Paragraphs justified */
+    .resume-section p {
+    text-align: justify;
+    line-height: 1.6;
+    color: var(--text-mid);
+    }
+    
+    /* ===============================
+    PDF VIEWER BOX
+    =============================== */
+    .pdf-viewer-box {
+    border: 1px solid var(--border-color);
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+    }
+    
+    .pdf-viewer-box object {
+    border-radius: 6px;
+    }
+    
+    /* ===============================
+    TIMELINE STYLING
+    =============================== */
+    .timeline {
+    border-left: 2px solid var(--accent);
+    margin-left: 8px;
+    padding-left: 16px;
+    }
+    
+    .timeline-item {
+    margin-bottom: 1.5rem;
+    position: relative;
+    }
+    
+    .timeline-item::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    background: var(--accent);
+    border-radius: 50%;
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    }
+    
+    .timeline-item h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-light);
+    }
+    
+    .timeline-date {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    display: block;
+    margin-bottom: 0.4rem;
+    }
+    
+    /* ===============================
+    LIST STYLES
+    =============================== */
+    .resume-list {
+    list-style: none;
+    padding-left: 0;
+    }
+    
+    .resume-list li {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border-color);
+    text-align: justify;
+    line-height: 1.5;
+    color: var(--text-mid);
+    }
+    
+    .resume-list.two-col {
+    columns: 2;
+    column-gap: 2rem;
+    }
+    
+    /* ===============================
+    BUTTON AREA
+    =============================== */
+    .resume-download {
+    text-align: center;
+    margin-top: 1.8rem;
+    }
+    
+    /* ===============================
+    RESPONSIVE
+    =============================== */
+    @media (max-width: 700px) {
+    .resume-list.two-col {
+    columns: 1;
+    }
+    
+    .page-title {
+    font-size: 2rem;
+    }
+    }
+    

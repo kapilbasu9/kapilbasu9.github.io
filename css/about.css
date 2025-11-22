@@ -1,0 +1,283 @@
+/* =========================================================
+ABOUT SECTION
+========================================================= */
+.about-wrapper {
+    padding: 120px 0;
+    padding-bottom: 20px;       /* reduces extra space at the bottom */
+    margin-bottom: 0;
+    }
+    
+    .about-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    }
+    
+    /* LEFT SIDE TEXT */
+    .about-left {
+    flex: 1 1 450px;
+    min-width: 320px;
+    }
+    
+    /* RIGHT SIDE IMAGE */
+    .about-right {
+    flex: 0 1 300px;
+    display: flex;
+    justify-content: center;
+    }
+    
+    /* TEXT ELEMENTS */
+    .about-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    }
+
+    .about-text {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .about-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 600px;
+    }
+    
+    .about-highlights p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    opacity: 0.9;
+    }
+    
+    /* BUTTON AREA */
+    .about-actions {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    }
+    
+    /* PROFILE IMAGE CARD */
+    .photo-glass-card {
+    width: 270px;
+    height: 270px;
+    padding: 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    }
+    
+    /* =========================================================
+    RESPONSIVE FIXES
+    ========================================================= */
+    @media (max-width: 1000px) {
+    .about-card {
+    justify-content: center;
+    }
+    }
+    
+    @media (max-width: 900px) {
+    .about-card {
+    flex-direction: column;
+    text-align: center;
+    }
+    .about-actions {
+    justify-content: center;
+    }
+    .photo-glass-card {
+    margin-top: 25px;
+    }
+    }
+    
+    @media (max-width: 520px) {
+    .photo-glass-card {
+    width: 230px;
+    height: 230px;
+    }
+    }
+    
+    /* =========================================================
+    HOBBY SECTION
+    ========================================================= */
+    .hobbies-section {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    }
+    
+    .hobbies-section h2 {
+    margin-bottom: 10px;
+    }
+    
+    .hobbies-section p {
+    margin-bottom: 20px;
+    }
+    
+    /* =========================================================
+    3D HOBBY CAROUSEL
+    ========================================================= */
+    .hobby-carousel {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: rotateCarousel 20s linear infinite;
+    }
+    
+    .hobby-carousel img {
+    width: 260px;
+    height: 350px;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    }
+    
+    /* IMAGE POSITIONS */
+    .hobby-carousel img:nth-child(1) { transform: rotateY(0deg) translateZ(380px); }
+    .hobby-carousel img:nth-child(2) { transform: rotateY(72deg) translateZ(380px); }
+    .hobby-carousel img:nth-child(3) { transform: rotateY(144deg) translateZ(380px); }
+    .hobby-carousel img:nth-child(4) { transform: rotateY(216deg) translateZ(380px); }
+    .hobby-carousel img:nth-child(5) { transform: rotateY(288deg) translateZ(380px); }
+    
+    @keyframes rotateCarousel {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(-360deg); }
+    }
+    
+    /* =========================================================
+    IMAGE POPUP / LIGHTBOX
+    ========================================================= */
+    .image-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 9999;
+    transition: 0.3s ease;
+    }
+    
+    .image-popup.active {
+    opacity: 1;
+    visibility: visible;
+    }
+    
+    .popup-image {
+    max-width: 80%;
+    max-height: 80vh;
+    border-radius: 12px;
+    object-fit: contain;
+    }
+    
+    .close-popup {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    }
+    
+    /* =========================================================
+    RESPONSIVE LIGHTBOX
+    ========================================================= */
+    @media (max-width: 600px) {
+    .hobby-carousel {
+    width: 260px;
+    height: 260px;
+    }
+    .hobby-carousel img {
+    width: 140px;
+    height: 140px;
+    }
+    .image-popup img {
+    width: 95%;
+    max-height: 85%;
+    }
+    }
+    
+/* =====================================
+   2-COLUMN PROFILE GRID LAYOUT
+===================================== */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 80px;
+  }
+  
+  /* Each block */
+  .profile-block {
+    margin-bottom: 40px;
+  }
+  
+  /* Section titles */
+  .section-title {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  /* Subtitle */
+  .section-sub {
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  
+  /* Timeline styling */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .timeline-item h3 {
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .timeline-item .time {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  
+  /* Hire list */
+  .hire-list {
+    margin-top: 12px;
+    padding-left: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 991px) {
+    .profile-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
