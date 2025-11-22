@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Kapil Basu</title>
+
+  <meta name="description" content="Contact Kapil Basu — HR Recruiter and Electronics Engineer. Get in touch for hiring, collaborations, or project discussions.">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Kapil Basu, Electronics Engineer, HR Recruiter, Portfolio, AI Projects, IoT, Web Developer">
+  <meta property="og:locale" content="en_IN">
+
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <script defer src="js/main.js"></script>
+
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      align-items: start;
+    }
+    .contact-card { min-height: 220px; }
+    .contact-card form .btn.full {
+      width: 100%;
+      display: inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+    }
+    .sr-only {
+      position: absolute !important;
+      width: 1px; height:1px;
+      padding:0; margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+    .form-status {
+      margin-top:12px;
+      font-weight:600;
+      min-height:1.4em;
+    }
+    .form-status.success { color: #0a7f3a; }
+    .form-status.error { color: #b00020; }
+  </style>
+</head>
+
+<body>
+
+<!-- Load Header -->
+<div id="header"></div>
+<script src="js/loadHeader.js"></script>
+
+<div class="page-transition">
+<main class="container">
+
+  <h1 class="page-title reveal">Contact Me</h1>
+  <p class="page-intro reveal">
+    Feel free to reach out for job opportunities, collaborations, or any query.
+  </p>
+
+  <div class="contact-grid">
+
+    <!-- Contact Info Panel -->
+    <div class="contact-card reveal">
+      <h2>Contact Information</h2>
+
+      <ul class="info-list">
+        <li><strong>Email:</strong>
+          <a href="mailto:kapilbasu9@gmail.com">kapilbasu9@gmail.com</a>
+        </li>
+        <li><strong>Phone:</strong>
+          <a href="tel:+918348907841">+91 83489 07841</a>
+        </li>
+      </ul>
+
+      <h2>Social Profiles</h2>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/kapil-basu-948b57169/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/kapilbasu9" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:kapilbasu9@gmail.com">Email</a>
+      </div>
+    </div>
+
+    <!-- Contact FORM -->
+    <div class="contact-card reveal" aria-labelledby="contact-form-title">
+      <h2 id="contact-form-title">Send a Message</h2>
+
+      <form id="contactForm" action="https://formspree.io/f/xpwkbbbo" method="POST" novalidate>
+
+        <label class="sr-only" for="hp">Leave this field empty</label>
+        <input id="hp" name="_gotcha" type="text" class="sr-only" tabindex="-1" autocomplete="off">
+
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" placeholder="Your email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+
+        <input type="hidden" name="_subject" value="New message from portfolio site">
+
+        <button id="submitBtn" class="btn full" type="submit">
+          <span id="btnText">Send Message</span>
+        </button>
+
+        <p id="formStatus" class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</main>
+</div>
+
+<!-- Load Footer -->
+<div id="footer"></div>
+<script src="js/loadFooter.js"></script>
+
+<button id="toTopBtn" aria-label="Scroll to top">↑</button>
+
+<a href="https://wa.me/918348907841" id="whatsappBtn" target="_blank" rel="noopener noreferrer">
+  <img src="images/whatsapp.png" alt="WhatsApp Logo">
+</a>
+
+<!-- FORM SUBMIT SCRIPT -->
+<script>
+(function () {
+
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+  const status = document.getElementById('formStatus');
+  const endpoint = "https://formspree.io/f/xpwkbbbo";
+
+  if (!form) return;
+
+  function setStatus(msg, type) {
+    status.textContent = msg;
+    status.className = "form-status " + (type || "");
+  }
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+    setStatus("", "");
+
+    const name = form.elements['name'].value.trim();
+    const email = form.elements['email'].value.trim();
+    const message = form.elements['message'].value.trim();
+    const honeypot = form.elements['_gotcha'].value.trim();
+
+    if (honeypot) return;  // bot protection
+
+    if (!name || !email || !message) {
+      setStatus("Please fill all required fields.", "error");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    btnText.textContent = "Sending...";
+
+    try {
+      const formData = new FormData(form);
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.ok) {
+        setStatus("Thanks — your message has been sent!", "success");
+        form.reset();
+      } else {
+        const data = await res.json().catch(() => null);
+        setStatus(
+          (data && data.error) || "Submission failed. Please try again.",
+          "error"
+        );
+      }
+
+    } catch (err) {
+      setStatus("Network error — please try again.", "error");
+      console.error(err);
+    }
+
+    submitBtn.disabled = false;
+    btnText.textContent = "Send Message";
+  });
+
+})();
+</script>
+
+</body>
+</html>
